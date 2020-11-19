@@ -39,8 +39,9 @@ func (h *randomHaberdasher) MakeHat(ctx context.Context, size *haberdasher.Size)
 		return nil, twirp.InvalidArgumentError("Inches", "I can't make a hat that small!")
 	}
 	return &haberdasher.Hat{
-		Size:  size.Inches,
-		Color: []string{"white", "black", "brown", "red", "blue"}[rand.Intn(4)],
-		Name:  []string{"bowler", "baseball cap", "top hat", "derby"}[rand.Intn(3)],
+		Size:   size.Inches,
+		Color:  []string{"white", "black", "brown", "red", "blue"}[rand.Intn(4)],
+		Name:   []string{"bowler", "baseball cap", "top hat", "derby"}[rand.Intn(3)],
+		Fabric: haberdasher.Hat_FRUIT_LEATHER,
 	}, nil
 }

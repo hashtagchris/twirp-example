@@ -14,6 +14,17 @@ message Hat {
 
   // The name of a hat is it's type. Like, 'bowler', or something.
   string name = 3;
+
+  enum Fabric {
+    UNKNOWN = 0;
+    SATIN = 1;
+    COTTON = 2;
+    FELT = 3;
+    VINYL = 4;
+    FRUIT_LEATHER = 5;
+  }
+
+  Fabric fabric = 4;
 }
 
 // Size is passed when requesting a new hat to be made. It's always measured in

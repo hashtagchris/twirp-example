@@ -26,7 +26,12 @@ import (
 func main() {
 	// Create a client capable of talking to a Haberdasher server running on
 	// localhost. This is a generated function call.
-	client := haberdasher.NewHaberdasherJSONClient("http://localhost:8080", &http.Client{})
+
+	// If the server returns an unknown enum value, the json client will fail with:
+	// twirp error internal: failed to unmarshal json response: unknown value "\"FRUIT_LEATHER\"" for enum twitch.twirp.example.haberdasher.Hat.Fabric
+	// client := haberdasher.NewHaberdasherJSONClient("http://localhost:8080", &http.Client{})
+
+	client := haberdasher.NewHaberdasherProtobufClient("http://localhost:8080", &http.Client{})
 
 	var (
 		hat *haberdasher.Hat
@@ -54,4 +59,17 @@ func main() {
 
 	// Print out the response.
 	fmt.Printf("%+v\n", hat)
+
+	switch hat.Fabric {
+	case haberdasher.Hat_COTTON:
+		fmt.Println("Cotton")
+	case haberdasher.Hat_SATIN:
+		fmt.Println("Satin")
+	case haberdasher.Hat_UNKNOWN:
+		fmt.Println("Unknown fabric")
+	case haberdasher.Hat_VINYL:
+		fmt.Println("Vinyl")
+	default:
+		fmt.Printf("Can't map %v to a fabric, sorry\n", hat.Fabric)
+	}
 }
