@@ -19,8 +19,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/hashtagchris/twirp-example/rpc/haberdasher"
 	"github.com/twitchtv/twirp"
-	"github.com/twitchtv/twirp-example/rpc/haberdasher"
 )
 
 func main() {

@@ -18,9 +18,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/twitchtv/twirp-example/internal/haberdasherserver"
-	"github.com/twitchtv/twirp-example/internal/hooks"
-	"github.com/twitchtv/twirp-example/rpc/haberdasher"
+	"github.com/hashtagchris/twirp-example/internal/haberdasherserver"
+	"github.com/hashtagchris/twirp-example/internal/hooks"
+	"github.com/hashtagchris/twirp-example/rpc/haberdasher"
 )
 
 func main() {
