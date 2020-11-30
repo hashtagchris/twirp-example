@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.23.0
 // 	protoc        v3.13.0
-// source: github.com/twitchtv/twirp-example/rpc/haberdasher/haberdasher.proto
+// source: github.com/hashtagchris/twirp-example/rpc/haberdasher/haberdasher.proto
 
 package haberdasher
 
