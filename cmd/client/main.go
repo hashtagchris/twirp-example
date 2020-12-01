@@ -60,6 +60,8 @@ func main() {
 	// Print out the response.
 	fmt.Printf("%+v\n", hat)
 
+	fmt.Printf("festive: %v\n", hat.GetFestive())
+
 	switch hat.Fabric {
 	case haberdasher.Hat_COTTON:
 		fmt.Println("Cotton")

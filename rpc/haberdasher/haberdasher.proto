@@ -25,6 +25,8 @@ message Hat {
   }
 
   Fabric fabric = 4;
+
+  bool festive = 5;
 }
 
 // Size is passed when requesting a new hat to be made. It's always measured in
