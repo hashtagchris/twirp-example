@@ -27,5 +27,5 @@ func main() {
 	hook := hooks.LoggingHooks(os.Stderr)
 	service := haberdasherserver.New()
 	server := haberdasher.NewHaberdasherServer(service, hook)
-	log.Fatal(http.ListenAndServe(":8080", server))
+	log.Fatal(http.ListenAndServe(":8479", server))
 }

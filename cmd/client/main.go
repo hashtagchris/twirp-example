@@ -31,7 +31,7 @@ func main() {
 	// twirp error internal: failed to unmarshal json response: unknown value "\"FRUIT_LEATHER\"" for enum twitch.twirp.example.haberdasher.Hat.Fabric
 	// client := haberdasher.NewHaberdasherJSONClient("http://localhost:8080", &http.Client{})
 
-	client := haberdasher.NewHaberdasherProtobufClient("http://localhost:8080", &http.Client{})
+	client := haberdasher.NewHaberdasherProtobufClient("http://localhost:8479", &http.Client{})
 
 	var (
 		hat *haberdasher.Hat
@@ -69,6 +69,8 @@ func main() {
 		fmt.Println("Unknown fabric")
 	case haberdasher.Hat_VINYL:
 		fmt.Println("Vinyl")
+	case haberdasher.Hat_FRUIT_LEATHER:
+		fmt.Println("Fruit leather")
 	default:
 		fmt.Printf("Can't map %v to a fabric, sorry\n", hat.Fabric)
 	}
